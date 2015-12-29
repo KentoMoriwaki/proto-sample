@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package huntr.friend;
+
+// The greeter service definition.
+service Relation {
+  // Sends a greeting
+  rpc GetFriends (Friend) returns (GetFriendsReply) {}
+}
+
+message Friend {
+  int32 id = 1;
+}
+
+// The response message containing the greetings
+message GetFriendsReply {
+  int32 count = 1;
+  repeated Friend friends = 2;
+}
